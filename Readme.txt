@@ -65,9 +65,9 @@ Then, the two spreadsheets can be safely submitted to HSDFinder with some person
 To comparative analyse the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway category. Firstly, the user will need to acqurie the HSDs outputs ("##.species.txt") from the former step, it is depending on how many species you are willing to compare with. But the default for plotting the heatmap is at least two species. There will be two files needed to plot the heatmap. Examples are given to guide the appropriate input files (Figure #). First input file is the outputs of your interest species after running the HSDFinder, the second file is retrieved from the KEGG database documented the correlation of KO accession with each gene model identifier. Since the species usually have unique gene model identifier, we recommend the user to submit the second KEGG pathway files corresponding to each species. Once the input files have been submitted, the HSDs numbers for each species will be displayed in a heatmap under different KEGG function category. On the left side, the color bar indicates a broad category of HSDs who have pathway function matches, such as carbohydrate metabolism, energy metabolism, translation etc. The color for the matrix indicates the number of HSDs across species. 
 
 Usage: python HSD_to_KEGG.py -h
-KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
+ HSD_to_KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
 
-e.g., python KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
+e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 
 
 (4)How to acquire the length of the gene models?
