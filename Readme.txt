@@ -4,14 +4,14 @@ ReadMe.txt
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
-What's new
+2.What's new
 Aug. 5th, 2020: Updated to version 1.5.
 The result of the predicted HSDs is displayed in a spreadsheet, which offers an alternative way to browse the result in graphical and tabular form. The software presented here is the primary selection of HSDs, the manually curation should be done to filter the partial and pseudogenes.
 
 Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
 
-INSTALLATION
+3.INSTALLATION
 Download the package and run
 
 tar -xzvf gce.tar.gz 
@@ -19,7 +19,15 @@ make (to build the executable file "gce")
 
 in the compiled version, you can use the gce directly.
 
-USAGE
+4. USAGE
+
+
+Use python3 HSDFinder.py to run HSDFinder
+Or
+Use python HSDFinder.py in Python2 environment
+
+See argument details by python/python3 HSDFinder.py -h
+
 gce -f test.freq -g total_kmer_num
 
 Options:
@@ -63,7 +71,7 @@ Run gce in heterzygous mode, siutable for heterozgyous genome (-H and -c must be
         ./gce -g 173854609857 -f AF.freq.stat.2colum -c 75 -H 1 >gce2.table 2>gce2.log
 
 
-OUTPUT
+5.OUTPUT
 GCE generates two output files: gce.table and gce.log
 
 The most valuable estimation results can be found at the end of gce.log file:
@@ -81,30 +89,11 @@ genome_size: estimated genome size (genome_size = effective_kmer_individuals / c
 a[1]: the ratio of unique kmers in all the kmer species in the genome
 b[1]: the ratio of unique kmers in all the kmer individuals in the genome
 
-2. gce-alternative
 
-Function
-  This package was developed by Wei Fan (fanweiagis@126.com), which is an alternative implementation to liubinghang's GCE software (ftp://ftp.genomics.org.cn/pub/gce).
-
-Installation  
-  Except the two programs coded by C++, which needs "make" to compile, the other are perl programs.
-
-Input and output 
-  The output file from kmerfreq can be used as input file for all the programs here.
-
-Usage
-  a.Only estimate genome size, with erroneous k-mers excluded, and float-point estimatation of peak coverage value 
-	perl ../estimate_genome_size.pl reads.freq.stat
-  b.Estimate genome size as well as repeat and heterozygosity, using discrete model, suitable for theoretic and good sequencing data without coverage bias 
-	perl ../estimate_genome_character.pl ./reads.freq.stat 
-  c.Estimate genome size as well as repeat and heterozygosity, using continuous model, suitable for bad or common real sequencing data with severe coverage bias  
-	perl ../estimate_genome_character_real.pl ./reads.freq.stat
-
-
-3. Reference
+6. Reference
 X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. Genome Research, doi: XX.XX
 
-4.Help 
+7.Help 
 The distribution version of HSDFinder is also available.
  Current version: v1 (5 August 2020) [download]. https://github.com/zx0223winner/HSDFinder
 
@@ -112,14 +101,6 @@ Links to the InterProScan and KEGG
  InterProscan: https://github.com/ebi-pf-team/interproscan
  KEGG : https://www.kegg.jp/kegg/
 
-5. Contact
+8. Contact
 For comments and questions, send a message to Xi Zhang (xzha25@uwo.ca).
 Usage of this site follows AWS’s Privacy Policy. In accordance with that policy, we use Matomo to collect anonymised data on visits to, downloads from, and searches of this site.
-
-
-
-Use python3 HSDFinder.py to run HSDFinder
-Or
-Use python HSDFinder.py in Python2 environment
-
-See argument details by python/python3 HSDFinder.py -h
