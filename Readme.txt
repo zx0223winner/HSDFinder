@@ -1,6 +1,6 @@
 ReadMe.txt
 
-1. HSDFinder
+1. HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
@@ -13,82 +13,61 @@ The web server is able to analyze the unannotated genome sequences by integratin
 
 3.INSTALLATION
 Download the package and run
-
-tar -xzvf gce.tar.gz 
-make (to build the executable file "gce")
-
-in the compiled version, you can use the gce directly.
+tar -xzvf HSDFinder_v1.0.tar.gz 
+Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
 4. USAGE
 
-
-Use python3 HSDFinder.py to run HSDFinder
+Must Use python3 HSDFinder.py to run HSDFinder
 Or
 Use python HSDFinder.py in Python2 environment
 
+HSDFinder.py -i <inputfile> -p <percentage identity> -l <length> -f <pfam file> -t <type> -o <output file>
+or 
+use HSDFinder.py --input_file=<input file> --percentage_identity=<percentage identity> --length=<length> --file=<pfam file> --type=<type> --output_file=<output file>
+
 See argument details by python/python3 HSDFinder.py -h
-
-gce -f test.freq -g total_kmer_num
-
 Options:
--f      depth frequency file, is a list file containing at least two lines, the first line
-	is depth and the second line is frequency(not the ratio) of the depth, other
-	line is not recognized in the program. 
--g 	total kmer number counted from the reads. It is suggested to set this
-	value for accurate estimation. If not, the total kmer number will be calculated using data in
-	kmer_depth_file, which often missing data and cause error in estimation
--c	unqiue coverage depth. It is suggested to be set when there is no
-	clear peak or there is clear un-unique peaks, especially when the
-	heterozygous ratio is high.
--H	when the heterozygous caused peak is clear, it is suggested to use
-	hybrid mode.
--b	when there is sequencing bias, you need to set the value.
-
--m	estiation mode, there are standard discrete model(default) and continuous model. You can
-	set 1 to use continuous model, but its stability is not well.
--M      max depth value, information for larger depth will be ignored; If you increase this value,
-	the estimation accuaray will be higher, but the run speed will be slower. 
-
--D	set the raw distance for continuous model, which decide the peak
-	number.
-	
--h: display help information.
-
+-i or --input_file	your fasta file
+-p or --percentage_identity	identity percent e.g. For 90%, input 90.0
+-l or --length	length e.g. 10
+-f or --file	the file contain pfam
+-t or --type	type e.g. Pfam
+-o or --output_file	output file name
 
 Run examples:
 
-First use a kmer counting tool to calculate kmer frequency for the sequencing data, get result file AF.kmer.freq.stat
-	kmerfreq -k 17 -t 10 -p AF  ./raw_reads.lib
-
-Then get the total kmer number for gce option "-g", and the depth frequency file for gce option "-f":
-	less AF.kmer.freq.stat | grep "#Kmer indivdual number" 
-	less AF.kmer.freq.stat | perl -ne 'next if(/^#/ || /^\s/); print; ' | awk '{print $1"\t"$2}' > AF.kmer.freq.stat.2colum 
-
-Run gce in homozygous mode, suitable for homozygous and near-homozygous genome (-g and -f must be set at the same time) 
-        ./gce -g 173854609857 -f AF.freq.stat.2colum >gce.table 2>gce.log
-
-Run gce in heterzygous mode, siutable for heterozgyous genome (-H and -c must be set at the same time) 
-        ./gce -g 173854609857 -f AF.freq.stat.2colum -c 75 -H 1 >gce2.table 2>gce2.log
-
+python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.
 
 5.OUTPUT
-GCE generates two output files: gce.table and gce.log
+HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
-The most valuable estimation results can be found at the end of gce.log file:
-
-Final estimation table:
-raw_peak        effective_kmer_species  effective_kmer_individuals      coverage_depth  genome_size     a[1]    b[1]
-75      742400596       168346645871    75.8021 2.22087e+09     0.663012        0.271515
+Example of the 8-column spreadsheet:
+g735.t1 	g735.t1; g741.t1; g8053.t1 	744; 744; 747 	Pfam PF11999; PF11999; PF11999 	Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494) 	2.2E-47; 7.8E-47; 2.5E-47 	IPR021884; IPR021884; IPR021884 	Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like 
 
 Column explanation:
-raw_peak: the major peak on the kmer species curve, corresponding to the non-repeatitive and non-heterozygous genomic regions
-effective_kmer_species: total number of genuine kmer species (without low-frequency kmers caused by sequencing errors)
-effective_kmer_individuals: total number of genuine kmer individuals (without low-frequency kmers caused by sequencing errors)      
-coverage_depth: estimated coverage depth of genuine kmers
-genome_size: estimated genome size (genome_size = effective_kmer_individuals / coverage_depth)
-a[1]: the ratio of unique kmers in all the kmer species in the genome
-b[1]: the ratio of unique kmers in all the kmer individuals in the genome
+Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default.
+Duplicate gene copies (within 10 amino acids, ≥90% pairwise identities):g735.t1; g741.t1; g8053.t1
+Amino acid length of duplicate gene copies (aa):744; 744; 747
+Pfam identifier:PF11999; PF11999; PF11999
+Pfam Description: Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494)
+InterPro Entry Identifier: IPR021884; IPR021884; IPR021884
+InterPro Entry Description: Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like
 
+Common questions (FAQ):
+(1) How to prepare the input files?
+First, before running HSDFinder to acquire the HSDs of your interest genome, there are two spreadsheets in tab-separated values (tsv) format shall be prepared as input files. File examples are provided to guide the appropriate input files. A protein BLAST search of the genome models against themselves (E-value cut-off 10-5, BLASTp output format 6) will yield the first input file. The BLAST results should be 12-column spreadsheets including the key information from query name to percentage identity etc. The second spreadsheet is acquired from InterProScan which is an automatically software providing the protein signatures such as Pfam domain. The output file of InterProsScan is tab-separated values (tsv) format in default. 
+
+(2) How to run HSDFinder?
+Then, the two spreadsheets can be safely submitted to HSDFinder with some personalized options. The HSDFinder is set default to filter those with near-identical protein lengths (within 10 amino acids) and >90% pairwise identities. The users always have an option to try different parameters from 50% to 100% identity or from within 0 aa to 100 aa variances to acquire the duplicates they like. The output of this step will be an 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain. Additionally, the user can conveniently set different values to create a trendline graph of the gene copies numbers under different criteria.
+
+(3)How to acquire the length of the gene models?
+In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
+For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
+
+awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
+
+This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
 
 6. Reference
 X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. Genome Research, doi: XX.XX
