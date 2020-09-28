@@ -37,7 +37,7 @@ Options:
 
 Run examples:
 
-python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.
+python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 
 5.OUTPUT
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
@@ -61,7 +61,16 @@ First, before running HSDFinder to acquire the HSDs of your interest genome, the
 (2) How to run HSDFinder?
 Then, the two spreadsheets can be safely submitted to HSDFinder with some personalized options. The HSDFinder is set default to filter those with near-identical protein lengths (within 10 amino acids) and >90% pairwise identities. The users always have an option to try different parameters from 50% to 100% identity or from within 0 aa to 100 aa variances to acquire the duplicates they like. The output of this step will be an 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain. Additionally, the user can conveniently set different values to create a trendline graph of the gene copies numbers under different criteria.
 
-(3)How to acquire the length of the gene models?
+(3)How to visualize the HSDs across species? 
+To comparative analyse the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway category. Firstly, the user will need to acqurie the HSDs outputs ("##.species.txt") from the former step, it is depending on how many species you are willing to compare with. But the default for plotting the heatmap is at least two species. There will be two files needed to plot the heatmap. Examples are given to guide the appropriate input files (Figure #). First input file is the outputs of your interest species after running the HSDFinder, the second file is retrieved from the KEGG database documented the correlation of KO accession with each gene model identifier. Since the species usually have unique gene model identifier, we recommend the user to submit the second KEGG pathway files corresponding to each species. Once the input files have been submitted, the HSDs numbers for each species will be displayed in a heatmap under different KEGG function category. On the left side, the color bar indicates a broad category of HSDs who have pathway function matches, such as carbohydrate metabolism, energy metabolism, translation etc. The color for the matrix indicates the number of HSDs across species. 
+
+Usage: python KEGG.py -h
+KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
+
+e.g., python KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
+
+
+(4)How to acquire the length of the gene models?
 In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
 For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
 
