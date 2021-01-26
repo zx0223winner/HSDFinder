@@ -89,7 +89,7 @@ awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/..
 This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
 
 6. Reference
-X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. Genome Research, doi: XX.XX
+X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. doi: XX.XX
 
 7.Help 
 The distribution version of HSDFinder is also available.
