@@ -1,6 +1,6 @@
 ReadMe.txt
 
-1. HSDFinder (http://hsdfinder.com)
+## HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
