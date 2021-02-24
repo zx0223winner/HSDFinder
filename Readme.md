@@ -1,4 +1,4 @@
-ReadMe.txt
+ReadMe.md
 
 ## HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
@@ -79,17 +79,6 @@ awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/..
 ```
 This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
 
-### Reference
-X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. doi: XX.XX
-
-### Help 
-The distribution version of HSDFinder is also available.
- Current version: v1 (5 August 2020) [download]. https://github.com/zx0223winner/HSDFinder
- 
- Links to the InterProScan and KEGG
- InterProscan: https://github.com/ebi-pf-team/interproscan
- KEGG : https://www.kegg.jp/kegg/
- 
 ### Common questions (FAQ):
 (1) How to prepare the input files?
 First, before running HSDFinder to acquire the HSDs of your interest genome, there are two spreadsheets in tab-separated values (tsv) format shall be prepared as input files. File examples are provided to guide the appropriate input files. A protein BLAST search of the genome models against themselves (E-value cut-off 10-5, BLASTp output format 6) will yield the first input file. The BLAST results should be 12-column spreadsheets including the key information from query name to percentage identity etc. The second spreadsheet is acquired from InterProScan which is an automatically software providing the protein signatures such as Pfam domain. The output file of InterProsScan is tab-separated values (tsv) format in default. 
@@ -100,7 +89,20 @@ Then, the two spreadsheets can be safely submitted to HSDFinder with some person
 (3)How to visualize the HSDs across species? 
 To comparative analyse the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway category. Firstly, the user will need to acqurie the HSDs outputs ("##.species.txt") from the former step, it is depending on how many species you are willing to compare with. But the default for plotting the heatmap is at least two species. There will be two files needed to plot the heatmap. Examples are given to guide the appropriate input files (Figure #). First input file is the outputs of your interest species after running the HSDFinder, the second file is retrieved from the KEGG database documented the correlation of KO accession with each gene model identifier. Since the species usually have unique gene model identifier, we recommend the user to submit the second KEGG pathway files corresponding to each species. Once the input files have been submitted, the HSDs numbers for each species will be displayed in a heatmap under different KEGG function category. On the left side, the color bar indicates a broad category of HSDs who have pathway function matches, such as carbohydrate metabolism, energy metabolism, translation etc. The color for the matrix indicates the number of HSDs across species. 
 
+### Help 
+The distribution version of HSDFinder is also available.
+ Current version: v1 (5 August 2020) [download]. https://github.com/zx0223winner/HSDFinder
+ 
+ Links to the InterProScan and KEGG
+ InterProscan: https://github.com/ebi-pf-team/interproscan
+ KEGG : https://www.kegg.jp/kegg/
+
 ### Contact
 For comments and questions, send a message to Xi Zhang (xzha25@uwo.ca).
 Usage of this site follows AWS’s Privacy Policy. In accordance with that policy, we use Matomo to collect anonymised data on visits to, downloads from, and searches of this site.
+© Copyright (C) 2021
+https://github.com/zx0223winner/HSDFinder.git
+
+### Reference
+X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. doi: XX.XX
 
