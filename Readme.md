@@ -1,22 +1,22 @@
 ReadMe.md
 
-## HSDFinder (http://hsdfinder.com)
+### HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
-### What's new
+#### What's new
 Aug. 5th, 2020: Updated to version 1.5.
 The result of the predicted HSDs is displayed in a spreadsheet, which offers an alternative way to browse the result in graphical and tabular form. The software presented here is the primary selection of HSDs, the manually curation should be done to filter the partial and pseudogenes.
 
 Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
 
-### INSTALLATION
+#### INSTALLATION
 Download the package and run
 tar -xzvf HSDFinder_v1.0.tar.gz 
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
-### INPUT
+#### Input
 
 *Example of the 12-column input file 1:*
 ```
@@ -96,7 +96,7 @@ Run examples:
 python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 ```
 
-### OUTPUT
+#### Output
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
 *Example of the 8-column spreadsheet:*
@@ -115,7 +115,22 @@ Column explanation:
 
 ### Creating Heatmap
 
-*Example of the 13-column input file 2:*
+#### Input
+*Example of the 2-column input file for KO accession*
+```
+g10.t1	K07566
+g11.t1
+g12.t1
+g13.t1
+g14.t1
+g15.t1	K09481
+g16.t1	K00472
+```
+Column explanation:
+1. Gene identifier (e.g. g10.t1)
+2. KO accession with each gene model identifier retrieved from the KEGG database (e.g. K09481)
+
+#### Running
 
 ```
 Usage: python HSD_to_KEGG.py -h
@@ -123,6 +138,21 @@ Usage: python HSD_to_KEGG.py -h
 
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
+
+#### Output 
+
+*Example of the 2-column input file for KO accession*
+```
+g10.t1	K07566
+g11.t1
+g12.t1
+g13.t1
+g14.t1
+g15.t1	K09481
+g16.t1	K00472
+```
+Column explanation:
+
 
 ### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
