@@ -174,7 +174,24 @@ The color for the matrix reflects the number of HSDs across and the left hand si
 
 ### Common questions (FAQ):
 
-### What's NoBadWordsCombiner?
+#### How to prepare the input files?
+Before running HSDFinder, two tab-delimited text files need to be prepared as inputs (Figure S1A). A protein BLAST search of the genes against themselves (Suggested parameters: E-value cut-off ≤10-5, BLASTP -outfmt 6) will yield the first input file. The BLAST result of the amino acid sequences shall be arranged in a 12-column tab-delimited text file, including the key information of the genes from the query name to percentage identity etc. (See more details in HSDFinder tutorial from GitHub). The second tab-delimited text file is acquired from the software InterProScan, which allow the genes to be scanned by different protein signature databases, such as Pfam domain. The output file of InterProsScan is tab-delimited text file in default. 
+
+#### How to run HSDFinder?
+The two tab-delimited text files then can be uploaded to HSDFinder with some personalized options. The default setting of HSDFinder filters highly similar duplicates (HSDs) with near-identical protein lengths (within 10 amino acids of each other) and ≥ 90% pairwise amino acid identities. Choosing such a relative strict cut-off might rule out other genuine duplicates from the list. But from our past experience with green algae genomes, the thresholds of the metrics selected here can represent the majority of detected highly similar duplicates. Since the duplicates vary from different eukaryotic organisms, users always have the option to lower the thresholds to filter duplicates on their datasets (e.g., from 30% to 100% pairwise amino acid identity and from within 0-100 amino acid length variances), although lowering the threshold of the metrics might risk of increasing of false positives. The output file of HSDFinder will be arranged in an 8-column tab-delimited text file containing the information, such as HSD identifier, gene copy number, and Pfam domain.
+
+#### How to visualize the HSDs across species?
+For comparative analyses of the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway categories. To do so, the user will need to generate HSDs results following the previous steps for the species of interest. The default for plotting the heatmap is at least two species and at least two files are needed to plot the heatmap. Examples are given to guide the appropriate input files (See more details in the hands-on protocol on creating heatmap with example data). The first input file is the outputs of your interest species after running HSDFinder; the second file is retrieved from the KEGG database documenting the correlation of KEGG Orthology (KO) accession with each gene model identifier (The detailed steps are guided in HSDFinder tutorial from GitHub). Once the input files have been submitted for each species, the HSDs will be displayed in a heatmap (the color for the matrix reflects the number of HSDs across species) and a tab-delimited text file under different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
+
+#### How to acquire the length of the gene models?
+In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
+For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
+```
+awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
+```
+This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
+
+#### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
 ```
 Environmental Requirement: Pandas
@@ -185,27 +202,6 @@ python NoBadWordsCombiner.py -h
 Combiner.py -n <NCBI file> -s <Swiss file> -g <Gene list file> -k <Gene list file with KO annotation> -p <pfam file> -t <type> -o <output file name>
 Or use Combiner.py --ncbi_file=<NCBI file> --swiss_file=<Swiss file> --gene_file=<Gene list file> --ko_file=<Gene list file with KO annotation> --pfam_file=<pfam file> --type=<type> -output_file=<output file name>
 ```
-
-#### How to acquire the length of the gene models?
-In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
-For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
-```
-awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
-```
-This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
-
-
-#### How to prepare the input files?
-
-First, before running HSDFinder to acquire the HSDs of your interest genome, there are two spreadsheets in tab-separated values (tsv) format shall be prepared as input files. File examples are provided to guide the appropriate input files. A protein BLAST search of the genome models against themselves (E-value cut-off 10-5, BLASTp output format 6) will yield the first input file. The BLAST results should be 12-column spreadsheets including the key information from query name to percentage identity etc. The second spreadsheet is acquired from InterProScan which is an automatically software providing the protein signatures such as Pfam domain. The output file of InterProsScan is tab-separated values (tsv) format in default. 
-
-#### How to run HSDFinder?
-
-Then, the two spreadsheets can be safely submitted to HSDFinder with some personalized options. The HSDFinder is set default to filter those with near-identical protein lengths (within 10 amino acids) and >90% pairwise identities. The users always have an option to try different parameters from 50% to 100% identity or from within 0 aa to 100 aa variances to acquire the duplicates they like. The output of this step will be an 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain. Additionally, the user can conveniently set different values to create a trendline graph of the gene copies numbers under different criteria.
-
-#### How to visualize the HSDs across species?
-
-To comparative analyse the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway category. Firstly, the user will need to acqurie the HSDs outputs ("##.species.txt") from the former step, it is depending on how many species you are willing to compare with. But the default for plotting the heatmap is at least two species. There will be two files needed to plot the heatmap. Examples are given to guide the appropriate input files (Figure #). First input file is the outputs of your interest species after running the HSDFinder, the second file is retrieved from the KEGG database documented the correlation of KO accession with each gene model identifier. Since the species usually have unique gene model identifier, we recommend the user to submit the second KEGG pathway files corresponding to each species. Once the input files have been submitted, the HSDs numbers for each species will be displayed in a heatmap under different KEGG function category. On the left side, the color bar indicates a broad category of HSDs who have pathway function matches, such as carbohydrate metabolism, energy metabolism, translation etc. The color for the matrix indicates the number of HSDs across species. 
 
 ### Help 
 The distribution version of HSDFinder is also available.
