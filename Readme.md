@@ -143,18 +143,25 @@ e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species
 
 #### OUTPUT
 
-*Example of the 2-column input file for KO accession*
+*Example of the 8-column input file for HSDs under the KEGG functional categories*
 ```
-g10.t1	K07566
-g11.t1
-g12.t1
-g13.t1
-g14.t1
-g15.t1	K09481
-g16.t1	K00472
+0	09101 Carbohydrate metabolism	00010 Glycolysis / Gluconeogenesis [PATH:ko00010]	K13979  yahK; alcohol dehydrogenase (NAP+) 		uwo241	g1713.t1	1
+1	09101 Carbohydrate metabolism	00020 itrate cycle (TA cycle) [PATH:ko00020]	K00031  IH1, IH2, icd; isocitrate dehydrogenase 		uwo241	g3379.t1	1
+2	09101 Carbohydrate metabolism	00030 Pentose phosphate pathway [PATH:ko00030]	K00036  G6P, zwf; glucose-6-phosphate 1-dehydrogenase 		uwo241	g852.t1	1
+3	09101 Carbohydrate metabolism	00051 Fructose and mannose metabolism [PATH:ko00051]	K19355  MAN; mannan endo-1,4-beta-mannosidase 		uwo241	g3766.t1	1
+4	09101 Carbohydrate metabolism	00053 Ascorbate and aldarate metabolism [PATH:ko00053]	K00434  E1.11.1.11; L-ascorbate peroxidase 		uwo241	g15878.t1	1
+5	09103 Lipid metabolism	00073 utin, suberine and wax biosynthesis [PATH:ko00073]	K13356  FAR; alcohol-forming fatty acyl-CoA reductase 		uwo241	g6944.t1	1
+6	09108 Metabolism of cofactors and vitamins	00130 Ubiquinone and other terpenoid-quinone biosynthesis [PATH:ko00130]	K17872  NC1, ndbB; demethylphylloquinone reductase 		uwo241	g269.t1, g13422.t1	2
 ```
 Column explanation:
-
+1. The identifier (e.g. 0)
+2. Pathway category1	(e.g. 09101 Carbohydrate metabolism)
+3. Pathway category2	(e.g. 00010 Glycolysis / Gluconeogenesis [PATH:ko00010])
+4. KEGG ko_id	(e.g. K13979)
+5. function	(e.g. yahK; alcohol dehydrogenase (NAP+))
+6. species_name	(e.g. UWO241) Chlamydomonas sp. UWO241
+7. hsds_id	(e.g. g1713.t1)
+8. hsds_num (e.g. 1)
 
 ### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
