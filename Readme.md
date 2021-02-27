@@ -20,10 +20,9 @@ Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are und
 
 HSDFinder is developed to run on Linux. There are no versions planned for Windows or Apple (MAC OS X) operating systems. A minimum specification requirement is a machine with 2 cores and 4 GB of RAM, which will allow the analysis of a small number of sequences at a time. However the more resources the faster the analysis/more sequences can be analysed at a time.
 
-Software requirements:
-
-64-bit Linux
-Python 3 
+Software requirements:<br />
+64-bit Linux <br />
+Python 3 <br />
 
 ### 2. INPUT
 
