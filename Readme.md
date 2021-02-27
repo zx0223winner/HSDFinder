@@ -40,20 +40,78 @@ Run examples:
 
 python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 ```
+### INPUT
+
+*Example of the 12-column input file 1:*
+```
+g735.t1	g735.t1	100.000	744	0	0	1	744	1	744	0.0	1375
+g735.t1	g741.t1	96.237	744	28	0	1	744	1	744	0.0	1219
+g735.t1	g8053.t1	90.196	51	3	2	6	55	3	52	7.50e-13	65.8
+g735.t1	g7171.t1	77.632	608	121	13	144	740	147	750	3.98e-100	355
+g735.t1	g11305.t1	97.500	40	1	0	17	56	14	53	5.80e-14	69.4
+g741.t1	g741.t1	100.000	744	0	0	1	744	1	744	0.0	1375
+g8053.t1	g8053.t1	100.000	747	0	0	1	747	1	747	0.0	1380
+g7171.t1	g7171.t1	100.000	750	0	0	1	750	1	750	0.0	1386
+g11305.t1	g11305.t1	100.000	1059	0	0	1	1059	1	1059	0.0	1956
+```
+Column explanation:
+1. query_ID (e.g. g735.t1)
+2. seq_ID (e.g. g741.t1)
+3. percentage_identity (e.g. 96.237)
+4. aligned length (e.g. 744)
+5. mismatches (e.g. 28)
+6. gap_openings (e.g. 0)
+7. query_start (e.g. 1)
+8. query_end (e.g. 744)
+9. sequence_start (e.g. 1)
+10. sequence_end (e.g. 744)
+11. e-value (e.g. 0.0)
+12. bit-score (e.g. 1219)
+
+*Example of the 13-column input file 2:*
+```
+g735.t1	c82510c09b797ecced03c40f4da02ffb	247	Pfam	PF11999	Protein of unknown function (DUF3494)	57	241	2.2E-47	T	15-11-2019	IPR021884	Ice-binding protein-like
+g735.t1	c82510c09b797ecced03c40f4da02ffb	247	ProSiteProfiles	PS51257	Prokaryotic membrane lipoprotein lipid attachment site profile.	1	19	5.0	T	15-11-2019
+g741.t1	8cf52deba53cb877fbd0af222ed48ce3	247	ProSiteProfiles	PS51257	Prokaryotic membrane lipoprotein lipid attachment site profile.	1	19	5.0	T	15-11-2019
+g741.t1	8cf52deba53cb877fbd0af222ed48ce3	247	Pfam	PF11999	Protein of unknown function (DUF3494)	57	241	7.8E-47	T	15-11-2019	IPR021884	Ice-binding protein-like
+g8053.t1	3d70a0c7f160037bf79f409bd805d577	248	Pfam	PF11999	Protein of unknown function (DUF3494)	58	244	2.5E-47	T	15-11-2019	IPR021884	Ice-binding protein-like
+g7171.t1	9455b619e60679693d39c8191c410d18	249	Pfam	PF11999	Protein of unknown function (DUF3494)	58	244	8.0E-47	T	15-11-2019	IPR021884	Ice-binding protein-like
+g11305.t1	299faccc0b8751e2919a8a332d5e123f	352	Pfam	PF11999	Protein of unknown function (DUF3494)	157	348	7.8E-55	T	15-11-2019	IPR021884	Ice-binding protein-like
+```
+Column explanation: 
+1. Protein accession (e.g. g735.t1)
+2. Sequence MD5 digest (e.g. c82510c09b797ecced03c40f4da02ffb)
+3. Sequence length (e.g. 247)
+4. Analysis (e.g. Pfam)
+5. Signature accession (e.g. PF11999)
+6. Signature description (e.g. Protein of unknown function (DUF3494))
+7. Start location
+8. Stop location
+9. Score - is the e-value (or score) of the match reported by member database method (e.g. 2.2E-47)
+10. Status - is the status of the match (T: true)
+11. Date - is the date of the run (e.g. 15-11-2019)
+12. InterPro annotations - accession (e.g. IPR021884)
+13. InterPro annotations - description (e.g. Ice-binding protein-like)
+
+Note: If a value is missing in a column, for example, the match has no InterPro annotation, a ‘-‘ is displayed.
+
+
 ### OUTPUT
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
-Example of the 8-column spreadsheet:
+*Example of the 8-column spreadsheet:*
+```
 g735.t1 	g735.t1; g741.t1; g8053.t1 	744; 744; 747 	Pfam PF11999; PF11999; PF11999 	Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494) 	2.2E-47; 7.8E-47; 2.5E-47 	IPR021884; IPR021884; IPR021884 	Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like 
-
+```
 Column explanation:
-1. Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default.
-2. Duplicate gene copies (within 10 amino acids, ≥90% pairwise identities):g735.t1; g741.t1; g8053.t1
-3. Amino acid length of duplicate gene copies (aa):744; 744; 747
-Pfam identifier:PF11999; PF11999; PF11999
-Pfam Description: Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494)
-InterPro Entry Identifier: IPR021884; IPR021884; IPR021884
-InterPro Entry Description: Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like
+1. Highly Similar Duplicates (HSDs) identifiers: The first gene model of the duplicate gene copies is used as the HSD identifers in default. (e.g. g735.t1)
+2. Duplicate gene copies (within 10 amino acids, ≥90% pairwise identities)(e.g. g735.t1; g741.t1; g8053.t1)
+3. Amino acid length of duplicate gene copies (aa)(e.g. 744; 744; 747)
+4. Pfam identifier (e.g. PF11999; PF11999; PF11999)
+5. Analysis (e.g. Pfam / PRINTS / Gene3D)
+6. Pfam Description (e.g. Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494))
+7. InterPro Entry Identifier (e.g. IPR021884; IPR021884; IPR021884)
+8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
 ```
 Usage: python HSD_to_KEGG.py -h
  HSD_to_KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
