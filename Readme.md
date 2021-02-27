@@ -141,9 +141,9 @@ Usage: python HSD_to_KEGG.py -h
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
 
-#### OUTPUT
+#### OUTPUT (.eps and .tsv)
 
-*Example of the 8-column input file for HSDs under the KEGG functional categories*
+*Example of the 8-column input file for HSDs of different species categorized under different KEGG functional categories*
 ```
 0	09101 Carbohydrate metabolism	00010 Glycolysis / Gluconeogenesis [PATH:ko00010]	K13979  yahK; alcohol dehydrogenase (NAP+) 		uwo241	g1713.t1	1
 1	09101 Carbohydrate metabolism	00020 itrate cycle (TA cycle) [PATH:ko00020]	K00031  IH1, IH2, icd; isocitrate dehydrogenase 		uwo241	g3379.t1	1
@@ -162,6 +162,12 @@ Column explanation:
 6. species_name	(e.g. UWO241) Chlamydomonas sp. UWO241
 7. hsds_id	(e.g. g1713.t1)
 8. hsds_num (e.g. 1)
+
+*Example of the heatmap visualizing the HSDs across seven green algae *
+
+![The heatmap example](http://url/to/img.png)
+
+The color for the matrix reflects the number of HSDs across and the left hand side reflect different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 
 ### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
