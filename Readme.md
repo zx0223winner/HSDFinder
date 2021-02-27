@@ -163,9 +163,10 @@ Column explanation:
 7. hsds_id	(e.g. g1713.t1)
 8. hsds_num (e.g. 1)
 
-*Example of the heatmap visualizing the HSDs across seven green algae*
+*Example of the heatmap visualizing the HSDs across seven green algae* 
 
 ![The heatmap example](https://github.com/zx0223winner/HSDFinder/blob/master/Tutorial/Heatmap_example.pdf)
+**The high resolution version can be found [here!](https://github.com/zx0223winner/HSDFinder/blob/master/Tutorial/Heatmap_example.pdf)** 
 
 The color for the matrix reflects the number of HSDs across and the left hand side reflect different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 
