@@ -13,12 +13,12 @@ The result of the predicted HSDs is displayed in a spreadsheet, which offers an 
 Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
 
-### INSTALLATION
+### 1. INSTALLATION
 Download the package and run
 ```tar -xzvf HSDFinder_v1.0.tar.gz```
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
-### INPUT
+### 2. INPUT
 
 *Example of the 12-column input file 1:*
 ```
@@ -73,7 +73,7 @@ Column explanation:
 
 Note: If a value is missing in a column, for example, the match has no InterPro annotation, a ‘-‘ is displayed.
 
-### Running HSDFinder
+### 3. Running HSDFinder
 
 Must Use python3 HSDFinder.py to run HSDFinder
 Or
@@ -98,7 +98,7 @@ Run examples:
 python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 ```
 
-#### OUTPUT
+### 4. OUTPUT
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
 *Example of the 8-column spreadsheet:*
@@ -115,7 +115,7 @@ Column explanation:
 7. InterPro Entry Identifier (e.g. IPR021884; IPR021884; IPR021884)
 8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
 
-### Creating Heatmap
+### 5. Creating Heatmap
 
 #### INPUT
 *Example of the 2-column input file for KO accession*
