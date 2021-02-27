@@ -58,9 +58,9 @@ g11305.t1	299faccc0b8751e2919a8a332d5e123f	352	Pfam	PF11999	Protein of unknown f
 ```
 Column explanation: 
 1. Protein accession (e.g. g735.t1)
-2. Sequence MD5 digest (e.g. c82510c09b797ecced03c40f4da02ffb)
+2. Sequence unique code (e.g. c82510c09b797ecced03c40f4da02ffb)
 3. Sequence length (e.g. 247)
-4. Analysis (e.g. Pfam)
+4. Protein signature (e.g. Pfam)
 5. Signature accession (e.g. PF11999)
 6. Signature description (e.g. Protein of unknown function (DUF3494))
 7. Start location
