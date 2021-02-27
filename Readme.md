@@ -18,6 +18,12 @@ Download the package and run
 ```tar -xzvf HSDFinder_v1.0.tar.gz```
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
+HSDFinder is developed to run on Linux. There are no versions planned for Windows or Apple (MAC OS X) operating systems. A minimum specification requirement is a machine with 2 cores and 4 GB of RAM, which will allow the analysis of a small number of sequences at a time. However the more resources the faster the analysis/more sequences can be analysed at a time.
+
+Software requirements:
+64-bit Linux
+Python 3 
+
 ### 2. INPUT
 
 *Example of the 12-column input file 1:*
