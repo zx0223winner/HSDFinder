@@ -23,7 +23,6 @@ HSDFinder is developed to run on Linux. There are no versions planned for Window
 Software requirements:
 
 64-bit Linux
-
 Python 3 
 
 ### 2. INPUT
