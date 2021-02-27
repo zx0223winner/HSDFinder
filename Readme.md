@@ -16,7 +16,7 @@ Download the package and run
 tar -xzvf HSDFinder_v1.0.tar.gz 
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
-### Input
+### INPUT
 
 *Example of the 12-column input file 1:*
 ```
@@ -96,7 +96,7 @@ Run examples:
 python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 ```
 
-#### Output
+#### OUTPUT
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
 *Example of the 8-column spreadsheet:*
@@ -115,7 +115,7 @@ Column explanation:
 
 ### Creating Heatmap
 
-#### Input
+#### INPUT
 *Example of the 2-column input file for KO accession*
 ```
 g10.t1	K07566
@@ -139,7 +139,7 @@ Usage: python HSD_to_KEGG.py -h
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
 
-#### Output 
+#### OUTPUT
 
 *Example of the 2-column input file for KO accession*
 ```
