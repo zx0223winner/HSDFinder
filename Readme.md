@@ -5,6 +5,8 @@ HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eu
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
 ### What's new
+Jan. 16th, 2021: HSDFinder and HSDatabase were cited by the Cell Press Journal iScience with the aticle name "Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
+
 Aug. 5th, 2020: Updated to version 1.5.
 The result of the predicted HSDs is displayed in a spreadsheet, which offers an alternative way to browse the result in graphical and tabular form. The software presented here is the primary selection of HSDs, the manually curation should be done to filter the partial and pseudogenes.
 
@@ -13,7 +15,7 @@ The web server is able to analyze the unannotated genome sequences by integratin
 
 ### INSTALLATION
 Download the package and run
-tar -xzvf HSDFinder_v1.0.tar.gz 
+```tar -xzvf HSDFinder_v1.0.tar.gz```
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
 ### INPUT
