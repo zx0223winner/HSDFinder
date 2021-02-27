@@ -117,7 +117,7 @@ Column explanation:
 
 ### 5. Creating Heatmap
 
-#### (1) INPUT
+#### 1) INPUT
 *Example of the 2-column input file for KO accession*
 ```
 g10.t1	K07566
@@ -132,7 +132,7 @@ Column explanation:
 1. Gene identifier (e.g. g10.t1)
 2. KO accession with each gene model identifier retrieved from the KEGG database (e.g. K09481)
 
-#### (2) RUNNING
+#### 2) RUNNING
 
 ```
 Usage: python HSD_to_KEGG.py -h
@@ -141,9 +141,9 @@ Usage: python HSD_to_KEGG.py -h
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
 
-#### (3) OUTPUT (.eps and .tsv)
+#### 3) OUTPUT (.tsv and .eps)
 
-*Example of the 8-column input file for HSDs of different species categorized under different KEGG functional categories*
+*Example of the 8-column tab-delimited file (.tsv ) for HSDs of different species categorized under different KEGG functional categories* 
 ```
 0	09101 Carbohydrate metabolism	00010 Glycolysis / Gluconeogenesis [PATH:ko00010]	K13979  yahK; alcohol dehydrogenase (NAP+) 		uwo241	g1713.t1	1
 1	09101 Carbohydrate metabolism	00020 itrate cycle (TA cycle) [PATH:ko00020]	K00031  IH1, IH2, icd; isocitrate dehydrogenase 		uwo241	g3379.t1	1
@@ -163,7 +163,7 @@ Column explanation:
 7. hsds_id	(e.g. g1713.t1)
 8. hsds_num (e.g. 1)
 
-*Example of the heatmap visualizing the HSDs across seven green algae* 
+*Example of the heatmap file (.eps) visualizing the HSDs across seven green algae* 
 
 ![The heatmap example](https://github.com/zx0223winner/HSDatabse/blob/master/Test.png)
 
@@ -172,7 +172,7 @@ Column explanation:
 The color for the matrix reflects the number of HSDs across and the left hand side reflect different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 
 
-### Common questions (FAQ):
+### 6. Common questions (FAQ):
 
 #### How to prepare the input files?
 Before running HSDFinder, two tab-delimited text files need to be prepared as inputs (Figure S1A). A protein BLAST search of the genes against themselves (Suggested parameters: E-value cut-off ≤10-5, BLASTP -outfmt 6) will yield the first input file. The BLAST result of the amino acid sequences shall be arranged in a 12-column tab-delimited text file, including the key information of the genes from the query name to percentage identity etc. (See more details in HSDFinder tutorial from GitHub). The second tab-delimited text file is acquired from the software InterProScan, which allow the genes to be scanned by different protein signature databases, such as Pfam domain. The output file of InterProsScan is tab-delimited text file in default. 
