@@ -1,22 +1,22 @@
 ReadMe.md
 
-### HSDFinder (http://hsdfinder.com)
+## HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 
-#### What's new
+### What's new
 Aug. 5th, 2020: Updated to version 1.5.
 The result of the predicted HSDs is displayed in a spreadsheet, which offers an alternative way to browse the result in graphical and tabular form. The software presented here is the primary selection of HSDs, the manually curation should be done to filter the partial and pseudogenes.
 
 Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
 
-#### INSTALLATION
+### INSTALLATION
 Download the package and run
 tar -xzvf HSDFinder_v1.0.tar.gz 
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
 
-#### Input
+### Input
 
 *Example of the 12-column input file 1:*
 ```
@@ -71,7 +71,7 @@ Column explanation:
 
 Note: If a value is missing in a column, for example, the match has no InterPro annotation, a ‘-‘ is displayed.
 
-#### Running HSDFinder
+### Running HSDFinder
 
 Must Use python3 HSDFinder.py to run HSDFinder
 Or
