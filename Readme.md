@@ -117,7 +117,7 @@ Column explanation:
 
 ### 5. Creating Heatmap
 
-#### INPUT
+#### (1) INPUT
 *Example of the 2-column input file for KO accession*
 ```
 g10.t1	K07566
@@ -132,7 +132,7 @@ Column explanation:
 1. Gene identifier (e.g. g10.t1)
 2. KO accession with each gene model identifier retrieved from the KEGG database (e.g. K09481)
 
-#### Running
+#### (2) RUNNING
 
 ```
 Usage: python HSD_to_KEGG.py -h
@@ -141,7 +141,7 @@ Usage: python HSD_to_KEGG.py -h
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
 
-#### OUTPUT (.eps and .tsv)
+#### (3) OUTPUT (.eps and .tsv)
 
 *Example of the 8-column input file for HSDs of different species categorized under different KEGG functional categories*
 ```
@@ -171,6 +171,9 @@ Column explanation:
 
 The color for the matrix reflects the number of HSDs across and the left hand side reflect different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 
+
+### Common questions (FAQ):
+
 ### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
 ```
@@ -182,8 +185,6 @@ python NoBadWordsCombiner.py -h
 Combiner.py -n <NCBI file> -s <Swiss file> -g <Gene list file> -k <Gene list file with KO annotation> -p <pfam file> -t <type> -o <output file name>
 Or use Combiner.py --ncbi_file=<NCBI file> --swiss_file=<Swiss file> --gene_file=<Gene list file> --ko_file=<Gene list file with KO annotation> --pfam_file=<pfam file> --type=<type> -output_file=<output file name>
 ```
-
-### Common questions (FAQ):
 
 #### How to acquire the length of the gene models?
 In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
