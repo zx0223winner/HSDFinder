@@ -1,11 +1,37 @@
 <font size=20>__HSDFinder Manual__</font>
 
 
+1. [About HSDFinder](#sec1) </br>
+    1.1 [What's NEW](#sec1.1) </br>
+    1.2 [INSTALLATION](#sec1.2) </br>
+ 
+2. INPUT
 
+3. Running HSDFinder
+
+4. OUTPUT
+
+5. Creating Heatmap
+1) INPUT
+2) RUNNING
+3) OUTPUT (.tsv and .eps)
+
+6. Common questions (FAQ):
+How to prepare the input files?
+How to run HSDFinder?
+How to visualize the HSDs across species?
+How to acquire the length of the gene models?
+What's NoBadWordsCombiner?
+
+Help 
+Contact
+Reference
+
+<a name="sec1"></a>
 ## HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
-
+<a name="sec1.1"></a>
 ### What's new
 Jan. 16th, 2021: HSDFinder and HSDatabase were cited by the Cell Press Journal iScience with the aticle name "Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
 
@@ -14,7 +40,7 @@ The result of the predicted HSDs is displayed in a spreadsheet, which offers an 
 
 Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
-
+<a name="sec1.2"></a>
 ### 1. INSTALLATION
 Download the package and run
 ```tar -xzvf HSDFinder_v1.0.tar.gz```
