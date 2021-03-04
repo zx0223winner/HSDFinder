@@ -1,8 +1,6 @@
-ReadMe.md
+<font size=20>__HSDFinder Manual__</font>
 
-<font size=20>__SPAdes 3.15.1 Manual__</font>
-
-1. [About SPAdes](#sec1) </br>
+1. [About HSD](#sec1) </br>
     1.1. [Supported data types](#sec1.1)</br>
     1.2. [SPAdes pipeline](#sec1.2)</br>
     1.3. [SPAdes performance](#sec1.3)</br>
