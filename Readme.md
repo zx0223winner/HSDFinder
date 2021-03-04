@@ -1,28 +1,21 @@
 <font size=20>__HSDFinder Manual__</font>
 
-
 1. [About HSDFinder](#sec1) </br>
         1.1 [What's NEW](#sec1.1) </br>
         1.2 [INSTALLATION](#sec1.2) </br>
- 
 2. [INPUT](#sec2) </br>
-
 3. [Running HSDFinder](#sec3) </br>
-
 4. [OUTPUT](#sec4) </br>
-
 5. [Creating Heatmap](#sec5) </br>
         5.1 [INPUT](#sec5.1) </br>
         5.2 [RUNNING](#sec5.2) </br>
         5.3 [OUTPUT (.tsv and .eps)](#sec5.3) </br>
-
 6. [Common questions (FAQ):](#sec6) </br>
         6.1 [How to prepare the input files?](#sec6.1) </br>
         6.2 [How to run HSDFinder?](#sec6.2) </br>
         6.3 [How to visualize the HSDs across species?](#sec6.3) </br>
         6.4 [How to acquire the length of the gene models?](#sec6.4) </br>
         6.5 [What's NoBadWordsCombiner?](#sec6.5) </br>
-
 7. [Help](#sec7) </br>
 8. [Contact](#sec8) </br>
 9. [Reference](#sec9) </br>
