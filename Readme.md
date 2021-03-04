@@ -1,5 +1,40 @@
 ReadMe.md
 
+<font size=20>__SPAdes 3.15.1 Manual__</font>
+
+1. [About SPAdes](#sec1) </br>
+    1.1. [Supported data types](#sec1.1)</br>
+    1.2. [SPAdes pipeline](#sec1.2)</br>
+    1.3. [SPAdes performance](#sec1.3)</br>
+2. [Installation](#sec2)</br>
+    2.1. [Downloading SPAdes Linux binaries](#sec2.1)</br>
+    2.2. [Downloading SPAdes binaries for Mac](#sec2.2)</br>
+    2.3. [Downloading and compiling SPAdes source code](#sec2.3)</br>
+    2.4. [Verifying your installation](#sec2.4)</br>
+3. [Running SPAdes](#sec3)</br>
+    3.1. [SPAdes input](#sec3.1)</br>
+    3.2. [SPAdes command line options](#sec3.2)</br>
+    3.3. [Assembling IonTorrent reads](#sec3.3)</br>
+    3.4. [Assembling long Illumina paired reads (2x150 and 2x250)](#sec3.4)</br>
+    3.5. [HMM-guided mode](#hmm)</br>
+    3.6. [SPAdes output](#spadesoutsec)</br>
+    3.7. [plasmidSPAdes output](#plasmidout)</br>
+    3.8. [metaplasmidSPAdes and metaviralSPAdes output](#metapv)</br>
+    3.9. [biosyntheticSPAdes output](#bgc)</br>
+    3.10. [Assembly evaluation](#eval)</br>
+4. [Stand-alone binaries released within SPAdes package](#sec4)</br>
+    4.1. [k-mer counting](#sec4.1)</br>
+    4.2. [k-mer coverage read filter](#sec4.2)</br>
+    4.3. [k-mer cardinality estimating](#sec4.3)</br>
+    4.4. [Graph construction](#sec4.4)</br>
+    4.5. [Long read to graph alignment](#sec4.5)</br>
+        4.5.1. [hybridSPAdes aligner](#sec4.5.1)</br>
+        4.5.2. [SPAligner](#sec4.5.2)</br>
+5. [Citation](#sec5)</br>
+6. [Feedback and bug reports](#sec6)</br>
+
+<a name="sec1"></a>
+
 ## HSDFinder (http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
