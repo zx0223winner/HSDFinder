@@ -1,4 +1,9 @@
-<font size=20>__HSDFinder Manual__</font>
+[![License](https://img.shields.io/badge/licence-GPLv2-blue)](https://www.gnu.org/licenses/old-licenses/gpl-2.0)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ablab/spades)](https://github.com/ablab/spades/releases/)
+[![GitHub Downloads](https://img.shields.io/github/downloads/ablab/spades/total.svg?style=social&logo=github&label=Download)](https://github.com/ablab/spades/releases)
+[![BioConda Downloads](https://anaconda.org/bioconda/spades/badges/downloads.svg)](https://anaconda.org/bioconda/spades)
+
+<font size=40>__HSDFinder Manual__</font>
 
 1. [About HSDFinder](#sec1) </br>
         1.1 [What's NEW](#sec1.1) </br>
@@ -25,7 +30,7 @@
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 <a name="sec1.1"></a>
-### What's new
+### What's new 
 Jan. 16th, 2021: HSDFinder and HSDatabase were cited by the Cell Press Journal iScience with the aticle name "Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
 
 Aug. 5th, 2020: Updated to version 1.5.
@@ -44,7 +49,7 @@ HSDFinder is developed to run on Linux. There are no versions planned for Window
 Software requirements:<br />
 64-bit Linux <br />
 Python 3 <br />
-
+<a name="sec2"></a>
 ### 2. INPUT
 
 *Example of the 12-column input file 1:*
@@ -99,7 +104,7 @@ Column explanation:
 13. InterPro annotations - description (e.g. Ice-binding protein-like)
 
 Note: If a value is missing in a column, for example, the match has no InterPro annotation, a ‘-‘ is displayed.
-
+<a name="sec3"></a>
 ### 3. Running HSDFinder
 
 Must Use python3 HSDFinder.py to run HSDFinder
@@ -124,7 +129,7 @@ Run examples:
 
 python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../##.INTERPROSCAN.tsv' -t Pfam -o ##.species.txt
 ```
-
+<a name="sec4"></a>
 ### 4. OUTPUT
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
@@ -141,9 +146,9 @@ Column explanation:
 6. Pfam Description (e.g. Protein of unknown function (DUF3494); Protein of unknown function (DUF3494); Protein of unknown function (DUF3494))
 7. InterPro Entry Identifier (e.g. IPR021884; IPR021884; IPR021884)
 8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
-
+<a name="sec5"></a>
 ### 5. Creating Heatmap
-
+<a name="sec5.1"></a>
 #### 1) INPUT
 *Example of the 2-column input file for KO accession*
 ```
@@ -158,7 +163,7 @@ g16.t1	K00472
 Column explanation:
 1. Gene identifier (e.g. g10.t1)
 2. KO accession with each gene model identifier retrieved from the KEGG database (e.g. K09481)
-
+<a name="sec5.2"></a>
 #### 2) RUNNING
 
 ```
@@ -167,7 +172,7 @@ Usage: python HSD_to_KEGG.py -h
 
 e.g., python HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
 ```
-
+<a name="sec5.3"></a>
 #### 3) OUTPUT (.tsv and .eps)
 
 *Example of the 8-column tab-delimited file (.tsv ) for HSDs of different species categorized under different KEGG functional categories* 
@@ -198,18 +203,18 @@ Column explanation:
 
 The color for the matrix reflects the number of HSDs across and the left hand side reflect different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 
-
+<a name="sec6"></a>
 ### 6. Common questions (FAQ):
-
+<a name="sec6.1"></a>
 #### How to prepare the input files?
 Before running HSDFinder, two tab-delimited text files need to be prepared as inputs (Figure S1A). A protein BLAST search of the genes against themselves (Suggested parameters: E-value cut-off ≤10-5, BLASTP -outfmt 6) will yield the first input file. The BLAST result of the amino acid sequences shall be arranged in a 12-column tab-delimited text file, including the key information of the genes from the query name to percentage identity etc. (See more details in HSDFinder tutorial from GitHub). The second tab-delimited text file is acquired from the software InterProScan, which allow the genes to be scanned by different protein signature databases, such as Pfam domain. The output file of InterProsScan is tab-delimited text file in default. 
-
+<a name="sec6.2"></a>
 #### How to run HSDFinder?
 The two tab-delimited text files then can be uploaded to HSDFinder with some personalized options. The default setting of HSDFinder filters highly similar duplicates (HSDs) with near-identical protein lengths (within 10 amino acids of each other) and ≥ 90% pairwise amino acid identities. Choosing such a relative strict cut-off might rule out other genuine duplicates from the list. But from our past experience with green algae genomes, the thresholds of the metrics selected here can represent the majority of detected highly similar duplicates. Since the duplicates vary from different eukaryotic organisms, users always have the option to lower the thresholds to filter duplicates on their datasets (e.g., from 30% to 100% pairwise amino acid identity and from within 0-100 amino acid length variances), although lowering the threshold of the metrics might risk of increasing of false positives. The output file of HSDFinder will be arranged in an 8-column tab-delimited text file containing the information, such as HSD identifier, gene copy number, and Pfam domain.
-
+<a name="sec6.3"></a>
 #### How to visualize the HSDs across species?
 For comparative analyses of the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway categories. To do so, the user will need to generate HSDs results following the previous steps for the species of interest. The default for plotting the heatmap is at least two species and at least two files are needed to plot the heatmap. Examples are given to guide the appropriate input files (See more details in the hands-on protocol on creating heatmap with example data). The first input file is the outputs of your interest species after running HSDFinder; the second file is retrieved from the KEGG database documenting the correlation of KEGG Orthology (KO) accession with each gene model identifier (The detailed steps are guided in HSDFinder tutorial from GitHub). Once the input files have been submitted for each species, the HSDs will be displayed in a heatmap (the color for the matrix reflects the number of HSDs across species) and a tab-delimited text file under different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
-
+<a name="sec6.4"></a>
 #### How to acquire the length of the gene models?
 In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
 For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
@@ -217,7 +222,7 @@ For the genome with amino acid sequences, simply copy and paste the code below t
 awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
 ```
 This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
-
+<a name="sec6.5"></a>
 #### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
 ```
@@ -229,7 +234,7 @@ python NoBadWordsCombiner.py -h
 Combiner.py -n <NCBI file> -s <Swiss file> -g <Gene list file> -k <Gene list file with KO annotation> -p <pfam file> -t <type> -o <output file name>
 Or use Combiner.py --ncbi_file=<NCBI file> --swiss_file=<Swiss file> --gene_file=<Gene list file> --ko_file=<Gene list file with KO annotation> --pfam_file=<pfam file> --type=<type> -output_file=<output file name>
 ```
-
+<a name="sec7"></a>
 ### Help 
 The distribution version of HSDFinder is also available.
  Current version: v1 (5 August 2020) [download]. https://github.com/zx0223winner/HSDFinder
@@ -237,13 +242,13 @@ The distribution version of HSDFinder is also available.
  Links to the InterProScan and KEGG
  InterProscan: https://github.com/ebi-pf-team/interproscan
  KEGG : https://www.kegg.jp/kegg/
-
+<a name="sec8"></a>
 ### Contact
 For comments and questions, send a message to Xi Zhang (xzha25@uwo.ca).
 Usage of this site follows AWS’s Privacy Policy. In accordance with that policy, we use Matomo to collect anonymised data on visits to, downloads from, and searches of this site.
 © Copyright (C) 2021
 https://github.com/zx0223winner/HSDFinder.git
-
+<a name="sec9"></a>
 ### Reference
 X. Zhang, Yining. Hu, D. Smith (2020). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. doi: XX.XX
 
