@@ -78,6 +78,7 @@ Column explanation:
 12. bit-score (e.g. 1219)
 
 Input File 2: Protein sequence in FASTA format
+
 *Example of the 13-column input file 2:*
 ```
 g735.t1	c82510c09b797ecced03c40f4da02ffb	247	Pfam	PF11999	Protein of unknown function (DUF3494)	57	241	2.2E-47	T	15-11-2019	IPR021884	Ice-binding protein-like
