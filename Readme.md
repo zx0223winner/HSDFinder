@@ -49,7 +49,7 @@ Software requirements:<br />
 Python 3 <br />
 <a name="sec2"></a>
 ### 2. INPUT
-Input File 1: BLAST all-against-all using protein sequence in FASTA format
+Input File is the BLAST all-against-all result by using protein sequence in FASTA format.
 
 *Example of the 12-column input file 1:*
 ```
@@ -77,7 +77,7 @@ Column explanation:
 11. e-value (e.g. 0.0)
 12. bit-score (e.g. 1219)
 
-Input File 2: Protein sequence in FASTA format
+Input File 2 is the InterProScan result by using protein sequence in FASTA format
 
 *Example of the 13-column input file 2:*
 ```
