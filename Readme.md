@@ -38,6 +38,7 @@ Aug. 1st, 2020: Updated to version 1.0.
 The web server is able to analyze the unannotated genome sequences by integrating the results from InterProScan (e.g., Pfam) and KEGG.
 <a name="sec1.2"></a>
 ### 1. INSTALLATION
+--------------------------
 Download the package and run
 ```tar -xzvf HSDFinder_v1.0.tar.gz```
 Make sure the three python scripts (HSDFinder.py, operation.py, pfam.py) are under the same dirctory. 
