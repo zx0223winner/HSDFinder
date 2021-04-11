@@ -50,6 +50,7 @@ Software requirements:<br />
 Python 3 <br />
 <a name="sec2"></a>
 ### 2. INPUT
+--------------------------
 Input File is the BLAST all-against-all result by using protein sequence in FASTA format.
 
 *Example of the 12-column input file 1:*
@@ -108,7 +109,7 @@ Column explanation:
 Note: If a value is missing in a column, for example, the match has no InterPro annotation, a ‘-‘ is displayed.
 <a name="sec3"></a>
 ### 3. Running HSDFinder
-
+--------------------------
 Must Use python3 HSDFinder.py to run HSDFinder
 Or
 Use python HSDFinder.py in Python2 environment
@@ -133,6 +134,7 @@ python3 HSDFinder.py -i '/.../.../##.BLAST.tabular' -p 90.0 -l 10 -f '/.../.../#
 ```
 <a name="sec4"></a>
 ### 4. OUTPUT
+--------------------------
 HSDFinder generates one output files: 8-column spreadsheet integrating with the information of HSD identifier, gene copies number and Pfam domain.
 
 *Example of the 8-column spreadsheet:*
@@ -150,6 +152,7 @@ Column explanation:
 8. InterPro Entry Description (e.g. Ice-binding protein-like ; Ice-binding protein-like ; Ice-binding protein-like)
 <a name="sec5"></a>
 ### 5. Creating Heatmap
+--------------------------
 <a name="sec5.1"></a>
 #### 1) INPUT
 *Example of the 2-column input file for KO accession*
@@ -207,6 +210,7 @@ The color for the matrix reflects the number of HSDs across and the left hand si
 
 <a name="sec6"></a>
 ### 6. Common questions (FAQ):
+--------------------------
 <a name="sec6.1"></a>
 #### How to prepare the input files?
 Before running HSDFinder, two tab-delimited text files need to be prepared as inputs (Figure S1A). A protein BLAST search of the genes against themselves (Suggested parameters: E-value cut-off ≤10-5, BLASTP -outfmt 6) will yield the first input file. The BLAST result of the amino acid sequences shall be arranged in a 12-column tab-delimited text file, including the key information of the genes from the query name to percentage identity etc. (See more details in HSDFinder tutorial from GitHub). The second tab-delimited text file is acquired from the software InterProScan, which allow the genes to be scanned by different protein signature databases, such as Pfam domain. The output file of InterProsScan is tab-delimited text file in default. 
