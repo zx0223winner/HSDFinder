@@ -41,7 +41,7 @@ The web server is able to analyze the unannotated genome sequences by integratin
 --------------------------
 Download the package and run
 
-```unix
+```shell
 tar -xzvf HSDFinder_v1.0.tar.gz
 ```
 
@@ -117,12 +117,12 @@ Note: If a value is missing in a column, for example, the match has no InterPro 
 Must Use python3 HSDFinder.py to run HSDFinder
 Or
 Use python HSDFinder.py in Python2 environment
-```
+```python
 HSDFinder.py -i <inputfile> -p <percentage identity> -l <length> -f <pfam file> -t <type> -o <output file>
 or 
 use HSDFinder.py --input_file=<input file> --percentage_identity=<percentage identity> --length=<length> --file=<pfam file> --type=<type> --output_file=<output file>
 ```
-```
+```python
 See argument details by python/python3 HSDFinder.py -h
 Options:
 -i or --input_file	your fasta file
@@ -175,7 +175,7 @@ Column explanation:
 <a name="sec5.2"></a>
 #### 2) RUNNING
 
-```
+```python
 Usage: python HSD_to_KEGG.py -h
  HSD_to_KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
 
@@ -228,7 +228,7 @@ For comparative analyses of the HSDs across different species, we developed an o
 #### How to acquire the length of the gene models?
 In some situations, if running errors occur with missing the gene length information. You can follow the sulution below.
 For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
-```
+```shell
 awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
 ```
 This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabular" to run as the input file.
