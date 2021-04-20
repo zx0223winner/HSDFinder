@@ -41,7 +41,7 @@ The web server is able to analyze the unannotated genome sequences by integratin
 --------------------------
 Download the package and run
 
-```shell
+```unix
 tar -xzvf HSDFinder_v1.0.tar.gz
 ```
 
@@ -235,7 +235,7 @@ This output file "##.protein.length.aa" can simply paste into the "##.BLAST.tabu
 <a name="sec6.5"></a>
 #### What's NoBadWordsCombiner?
 Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
-```
+```python
 Environmental Requirement: Pandas
 To collect pandas packages : sudo pip install pandas
 
