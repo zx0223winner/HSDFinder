@@ -254,11 +254,11 @@ The distribution version of HSDFinder is also available.
  KEGG : https://www.kegg.jp/kegg/
 <a name="sec8"></a>
 ### Contact
-For comments and questions, send a message to Xi Zhang (xzha25@uwo.ca).
+For comments and questions, send a message to Xi Zhang 📧(xzha25@uwo.ca).
 Usage of this site follows AWS’s Privacy Policy. In accordance with that policy, we use Matomo to collect anonymised data on visits to, downloads from, and searches of this site.
 © Copyright (C) 2021
 https://github.com/zx0223winner/HSDFinder.git
 <a name="sec9"></a>
 ### Reference
-X. Zhang, Yining. Hu, D. Smith (2021). HSDFinder- an integrated tool to predict highly similar duplicates in eukaryotic genomes. Star Protocols. doi: XX.XX
+X. Zhang, Yining. Hu, D. Smith (2021). Protocol for HSDFinder: identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes. Star Protocols. doi: XX.XX
 
