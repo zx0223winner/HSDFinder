@@ -17,7 +17,7 @@
         6.1 [How to prepare the input files?](#sec6.1) </br>
         6.2 [How to run HSDFinder?](#sec6.2) </br>
         6.3 [How to visualize the HSDs across species?](#sec6.3) </br>
-        6.4 [How to acquire the length of the gene models?](#sec6.4) </br>
+        6.4 [How to prepare the appropriate BLAST input file if error occurs?](#sec6.4) </br>
         6.5 [What's NoBadWordsCombiner?](#sec6.5) </br>
 7. [Help](#sec7) </br>
 8. [Contact](#sec8) </br>
