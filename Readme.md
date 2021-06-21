@@ -231,7 +231,7 @@ For comparative analyses of the HSDs across different species, we developed an o
 
 > 2. It can be easily solved by 1) running the following UNIX command on your original amino acid sequences to create a gene lenth file. 2) Then paste the gene length file into Blast result file. 3) Rerun the HSDFinder with new merged BLAST tabular file ("new.merged.BLAST.tabular.file") and Interproscan result file.
 
-> 3. For the genome with amino acid sequences, simply copy and paste the code below to create length of amino acid, make sure the gene identifier is consistent with the ones used as input files.
+> 3. For the genome with amino acid sequences ('/.../.../protein.fa'), simply copy and paste the code below to create length of amino acid, make sure the **gene identifier** is consistent with the ones used as input files.
 
 ```shell
 awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/.../.../protein.fa' |paste - - |sed 's/>//g'|awk -F'\t' '{print $1"\t"$1"\t"100"\t"$2}' >##.protein.length.aa
