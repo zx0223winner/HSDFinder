@@ -29,6 +29,8 @@ HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eu
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 <a name="sec1.1"></a>
 ### What's new 
+May. 9th, 2021: The peer-reviewed article "Protocol for HSDFinder: identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes" was accepted to be published.
+
 Jan. 16th, 2021: HSDFinder and HSDatabase were cited by the Cell Press Journal iScience with the aticle name "Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
 
 Aug. 5th, 2020: Updated to version 1.5.
@@ -269,4 +271,5 @@ https://github.com/zx0223winner/HSDFinder.git
 <a name="sec9"></a>
 ### Reference
 X. Zhang, Yining. Hu, D. Smith (2021). Protocol for HSDFinder: identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes. Star Protocols. doi: XX.XX
+X. Zhang, et.al. D. Smith (2020). Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
 
