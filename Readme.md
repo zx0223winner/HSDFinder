@@ -270,6 +270,8 @@ Usage of this site follows AWS’s Privacy Policy. In accordance with that polic
 https://github.com/zx0223winner/HSDFinder.git
 <a name="sec9"></a>
 ### Reference
-X. Zhang, Yining. Hu, D. Smith (2021). Protocol for HSDFinder: identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes. Star Protocols. doi: XX.XX
+
+Xi Zhang*, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder to help identify, categorize and annotate duplicate genes in eukaryotic nuclear genomes. STAR Protocols. DOI:https://doi.org/10.1016/j.xpro.2021.100619
+
 X. Zhang, et.al. D. Smith (2020). Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
 
