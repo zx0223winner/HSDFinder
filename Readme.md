@@ -263,15 +263,15 @@ The distribution version of HSDFinder is also available.
  Links to the InterProScan and KEGG
  InterProscan: https://github.com/ebi-pf-team/interproscan
  KEGG : https://www.kegg.jp/kegg/
+ 
 <a name="sec8"></a>
 ### Contact
-Usage of this site follows AWS’s Privacy Policy. In accordance with that policy, we use Matomo to collect anonymised data on visits to, downloads from, and searches of this site.
-© Copyright (C) 2021
-https://github.com/zx0223winner/HSDFinder.git
+Usage of this site follows AWS’s Privacy Policy. © Copyright (C) 2021 https://github.com/zx0223winner/HSDFinder.git
+
 <a name="sec9"></a>
 ### Reference
 
-Xi Zhang*, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder to help identify, categorize and annotate duplicate genes in eukaryotic nuclear genomes. STAR Protocols. DOI:https://doi.org/10.1016/j.xpro.2021.100619
+Xi Zhang, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder to help identify, categorize and annotate duplicate genes in eukaryotic nuclear genomes. STAR Protocols. DOI:https://doi.org/10.1016/j.xpro.2021.100619
 
-X. Zhang, et.al. D. Smith (2020). Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241" DOI:https://doi.org/10.1016/j.isci.2021.102084
+X. Zhang, et.al. D. Smith (2020). Draft genome sequence of the Antarctic green alga _Chlamydomonas_ sp. UWO241 DOI:https://doi.org/10.1016/j.isci.2021.102084
 
