@@ -59,6 +59,13 @@ Python 3 <br />
 --------------------------
 Input File is the BLAST all-against-all result by using protein sequence in FASTA format.
 
+```shell
+#Example of the Blast command
+> blastp -query species.fasta -db species_database_name -out BLASTP_species.txt -evalue 1e-5 -outfmt 6
+```
+
+> Note: Please don't set the -max_target_seqs parameter for the blastp command. Leave it at default setting, otherwise the HSDFinder might have the error occurred (missing the gene length information). Please follow the FAQ section below to solve the issue: How to prepare the appropriate BLAST input file if error occurs?
+
 *Example of the 12-column input file 1:*
 ```
 g735.t1	g735.t1	100.000	744	0	0	1	744	1	744	0.0	1375
