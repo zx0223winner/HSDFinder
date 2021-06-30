@@ -252,7 +252,7 @@ cat ##.protein.length.aa ##.BLAST.tabular > new.merged.BLAST.tabular.file
 ```
 <a name="sec6.5"></a>
 #### What's NoBadWordsCombiner?
-Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together without ‘bad words’ including Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
+Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together minimizing ‘bad words’ from Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
 ```python
 Environmental Requirement: Pandas
 To collect pandas packages : sudo pip install pandas
