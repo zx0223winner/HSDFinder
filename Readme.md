@@ -215,7 +215,7 @@ Column explanation:
 
 *Example of the heatmap file (.eps) visualizing the HSDs across seven green algae* 
 
-![The heatmap example](https://github.com/zx0223winner/HSDatabse/blob/master/Test.png)
+![The heatmap example](https://github.com/zx0223winner/HSDatabase/blob/master/Test.png)
 
 **The high resolution version can be found [here!](https://github.com/zx0223winner/HSDFinder/blob/master/Tutorial/Heatmap_example.pdf)** 
 
