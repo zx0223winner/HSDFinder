@@ -24,7 +24,7 @@
 9. [Reference](#sec9) </br>
 
 <a name="sec1"></a>
-## HSDFinder (http://hsdfinder.com)
+## [HSDFinder](http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
 <a name="sec1.1"></a>
@@ -265,15 +265,15 @@ Or use Combiner.py --ncbi_file=<NCBI file> --swiss_file=<Swiss file> --gene_file
 <a name="sec7"></a>
 ### Help 
 The distribution version of HSDFinder is also available.
- Current version: v1 (5 August 2020) [download]. https://github.com/zx0223winner/HSDFinder
+ Current version: v1 (5 August 2020) [download]( https://github.com/zx0223winner/HSDFinder)
  
  Links to the InterProScan and KEGG
- InterProscan: https://github.com/ebi-pf-team/interproscan
- KEGG : https://www.kegg.jp/kegg/
+ [InterProscan](https://github.com/ebi-pf-team/interproscan)
+ [KEGG](https://www.kegg.jp/kegg/)
  
 <a name="sec8"></a>
 ### Contact
-Usage of this site follows AWS’s Privacy Policy. © Copyright (C) 2021 https://github.com/zx0223winner/HSDFinder.git
+Usage of this site follows AWS’s Privacy Policy. © Copyright (C) 2021 
 
 <a name="sec9"></a>
 ### Reference
