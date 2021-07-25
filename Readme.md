@@ -234,8 +234,29 @@ The two tab-delimited text files then can be uploaded to HSDFinder with some per
 #### How to visualize the HSDs across species?
 For comparative analyses of the HSDs across different species, we developed an online heatmap plotting option to visualize the HSDs results in different KEGG pathway categories. To do so, the user will need to generate HSDs results following the previous steps for the species of interest. The default for plotting the heatmap is at least two species and at least two files are needed to plot the heatmap. Examples are given to guide the appropriate input files (See more details in the hands-on protocol on creating heatmap with example data). The first input file is the outputs of your interest species after running HSDFinder; the second file is retrieved from the KEGG database documenting the correlation of KEGG Orthology (KO) accession with each gene model identifier (The detailed steps are guided in HSDFinder tutorial from GitHub). Once the input files have been submitted for each species, the HSDs will be displayed in a heatmap (the color for the matrix reflects the number of HSDs across species) and a tab-delimited text file under different KEGG functional categories, such as carbohydrate metabolism, energy metabolism, and translation.
 <a name="sec6.4"></a>
+
+#### How to deal with Error: SyntaxError: Non-ASCII character '\xe2' in file HSDFinder.py?
+
+> SyntaxError: Non-ASCII character '\xe2' in file HSDFinder.py on line 3, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+
+This is can be solved by using python3 to run the code HSDFinder.py. 
+
 #### How to deal with Error: require length of gene ? 
- 
+The common error sign look like this:
+
+```
+Traceback (most recent call last):
+  File "HSDFinder.py", line 72, in <module>
+  main(sys.argv[1:])
+  File "HSDFinder.py", line 67, in main
+  result = operation.pfam_file_fun(input_file, percentage, length, pfam, p_type, output_file)
+  File "/home/.../operation.py", line 23, in pfam_file_fun
+  output = pfam.step(lines, p_filter, s_length)
+  File "/home/.../pfam.py", line 39, in step
+  lengtha = int(genes[items[0]])
+KeyError: 'XP_015611539.1'
+```
+
 > 1. In some situations, if running errors occur with missing the gene length information.This is ususally due to the BLAST search limit the max targets at default, however, some species are rich of gene duplicates. In this case, HSDFinder may not find one gene blast against itself with 100% identity, with aligned length to be gene length. 
 
 > 2. It can be easily solved by 1) running the following UNIX command on your original amino acid sequences to create a gene lenth file. 2) Then paste the gene length file into Blast result file. 3) Rerun the HSDFinder with new merged BLAST tabular file ("new.merged.BLAST.tabular.file") and Interproscan result file.
