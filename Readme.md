@@ -61,7 +61,9 @@ Input File is the BLAST all-against-all result by using protein sequence in FAST
 
 ```shell
 #Example of the Blast command
-> blastp -query species.fasta -db species_database_name -out BLASTP_species.txt -evalue 1e-5 -outfmt 6
+> makeblastdb -in <reference.fa> -dbtype prot -out <database_name> -title "Database title"
+
+> blastp -query species.fasta -db database_name -out BLASTP_species.txt -evalue 1e-5 -outfmt 6
 ```
 
 > Note: If the user chose the parameter -max_target_seqs in the blastp command to control the maximum blast hits, the HSDFinder might have the error occurred (missing the gene length information). Then, please follow the FAQ section below to solve the issue: How to prepare the appropriate BLAST input file if error occurs?
