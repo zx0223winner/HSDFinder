@@ -18,7 +18,6 @@
         6.2 [How to run HSDFinder?](#sec6.2) </br>
         6.3 [How to visualize the HSDs across species?](#sec6.3) </br>
         6.4 [How to prepare the appropriate BLAST input file if error occurs?](#sec6.4) </br>
-        6.5 [What's NoBadWordsCombiner?](#sec6.5) </br>
 7. [Help](#sec7) </br>
 8. [Contact](#sec8) </br>
 9. [Reference](#sec9) </br>
@@ -273,18 +272,7 @@ awk '/^>/{if (l!="") print l; print; l=0; next}{l+=length($0)}END{print l}' '/..
 ```shell
 cat ##.protein.length.aa ##.BLAST.tabular > new.merged.BLAST.tabular.file
 ```
-<a name="sec6.5"></a>
-#### What's NoBadWordsCombiner?
-Unlike the NCBI-NR or UniProtKB/Swiss-Prot, although they provide valuable function description of the interested genes; however, many hypothetical proteins or ‘bad name’ proteins are also included in the respective database, which will mess up the interpretation of HSDs results. Although it is not the focus of this article, we have developed another software can integrate the gene function information together minimizing ‘bad words’ from Nr-NCBI, UniProtKB/Swiss-Prot, KEGG, Pfam and GO etc..
-```python
-Environmental Requirement: Pandas
-To collect pandas packages : sudo pip install pandas
 
-python NoBadWordsCombiner.py -h
-
-Combiner.py -n <NCBI file> -s <Swiss file> -g <Gene list file> -k <Gene list file with KO annotation> -p <pfam file> -t <type> -o <output file name>
-Or use Combiner.py --ncbi_file=<NCBI file> --swiss_file=<Swiss file> --gene_file=<Gene list file> --ko_file=<Gene list file with KO annotation> --pfam_file=<pfam file> --type=<type> -output_file=<output file name>
-```
 <a name="sec7"></a>
 ### Help 
 The distribution version of HSDFinder is also available.
