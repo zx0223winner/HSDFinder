@@ -1,3 +1,5 @@
+# This script is part of HSDFinder, which shall be put in the same directory with HSDFinder.py 
+
 import os
 import sys
 import pfam
