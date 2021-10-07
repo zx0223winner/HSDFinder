@@ -1,3 +1,5 @@
+# Please find the full usage and detailed descriptions via the link: https://github.com/zx0223winner/NoBadWordsCombiner
+
 import sys
 import pandas as pd
 from collections import defaultdict
