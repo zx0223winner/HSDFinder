@@ -1,8 +1,37 @@
-# This is a sample Python script.
+# HSDFinder v1.0
 
-# Press ⇧F10 to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Copyright 2021 Xi Zhang, Yining Hu and David R. Smith
 
+
+#   This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Dependencies:
+#Pandas
+
+#To collect pandas packages: 
+#sudo pip install pandas
+
+# Usage: python3 HSD_to_KEGG.py -h
+# HSD_to_KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
+
+# e.g., python3 HSD_to_KEGG.py -i '/.../.../##.species.txt' -k '/.../.../##.species_ko.txt' -n ##.species -o ##.species.out.txt
+
+# If you use HSDFinder for your research, please cite:
+# Protocol for HSDFinder: Identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes DOI:https://doi.org/10.1016/j.xpro.2021.100619
+
+# To refer where the tool first being applied, please cite:
+# X. Zhang, et.al. D.R. Smith (2021). Draft genome sequence of the Antarctic green alga Chlamydomonas sp. UWO241 DOI:https://doi.org/10.1016/j.isci.2021.102084 
 
 import sys
 import getopt
