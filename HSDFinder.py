@@ -22,6 +22,9 @@
 #To collect pandas packages: 
 #sudo pip install pandas
 
+# Usage: python3 HSDFinder.py -i <inputfile> -p <percentage identity> -l <length> -f <pfam file> -t <type> -o <output file>
+#OR# python3 HSDFinder.py --input_file=<input file> --percentage_identity=<percentage identity> --length=<length> --file=<pfam file> --type=<type> --output_file=<output file>
+
 # Usage: python3 HSD_to_KEGG.py -h
 # HSD_to_KEGG.py -i <HSD file> -k <Gene list file with KO annotation> -n <species name> -o <output file name>
 
@@ -58,10 +61,10 @@ def main(argv):
             print(
                 'or use HSDFinder.py --input_file=<input file> --percentage_identity=<percentage identity> '
                 '--length=<length> --file=<pfam file> --type=<type> --output_file=<output file>\n'
-                '-i or --input_file\tyour fasta file\n'
+                '-i or --input_file\t the BLAST output file \n'
                 '-p or --percentage_identity\tidentity percent e.g. For 90%, input 90.0\n'
                 '-l or --length\tlength e.g. 10\n'
-                '-f or --file\tthe file contain pfam\n'
+                '-f or --file\tthe InterProScan output file \n'
                 '-t or --type\ttype e.g. Pfam\n'
                 '-o or --output_file\toutput file name')
             sys.exit()
