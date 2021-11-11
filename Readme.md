@@ -135,10 +135,10 @@ use HSDFinder.py --input_file=<input file> --percentage_identity=<percentage ide
 ```python
 See argument details by python/python3 HSDFinder.py -h
 Options:
--i or --input_file	your fasta file
+-i or --input_file	the BLAST output file
 -p or --percentage_identity	identity percent e.g. For 90%, input 90.0
 -l or --length	length e.g. 10
--f or --file	the file contain pfam
+-f or --file	the InterProScan output file 
 -t or --type	type e.g. Pfam
 -o or --output_file	output file name
 
