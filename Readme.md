@@ -288,6 +288,7 @@ Usage of this site follows AWS’s Privacy Policy. © Copyright (C) 2021
 
 <a name="sec9"></a>
 ### Reference
+Xi Zhang*, Yining Hu, David Roy Smith*. (2021). HSDFinder: a BLAST-based strategy to search for highly similar duplicated genes in eukaryotic genomes.Front. Bioinform. doi: 10.3389/fbinf.2021.803176
 
 Xi Zhang, Yining Hu, David Roy Smith. (2021). Protocol for HSDFinder: Identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes DOI:https://doi.org/10.1016/j.xpro.2021.100619
 
