@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/licence-GPLv2-blue)](https://www.gnu.org/licenses/old-licenses/gpl-2.0)
+[![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://anaconda.org/bioconda/hsdfinder)
 
 
 <font size=40>__HSDFinder Manual__</font>
@@ -26,6 +27,8 @@
 ## [HSDFinder](http://hsdfinder.com)
 HSDFinder - an integrated tool to predict highly similar duplicates (HSDs) in eukaryotic genomes.
 HSDFinder aims to become a useful platform for the identification and analysis of HSDs in the eukaryotic genomes, which deepen our insights into the gene duplication mechanisms driving the genome adaptation.
+
+
 <a name="sec1.1"></a>
 ### What's new 
 May. 9th, 2021: The peer-reviewed article "Protocol for HSDFinder: identifying, annotating, categorizing, and visualizing duplicated genes in eukaryotic genomes" was accepted to be published.
@@ -40,6 +43,16 @@ The web server is able to analyze the unannotated genome sequences by integratin
 <a name="sec1.2"></a>
 ### 1. INSTALLATION
 --------------------------
+
+### Conda install
+To install this package run one of the following:
+> conda install bioconda::hsdfinder
+
+Then testing the usage by running:
+
+> hsdfinder -h
+
+### OR 
 Download the package and run
 
 ```unix
