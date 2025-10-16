@@ -1,7 +1,18 @@
 [![License](https://img.shields.io/badge/licence-GPLv2-blue)](https://www.gnu.org/licenses/old-licenses/gpl-2.0)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://anaconda.org/bioconda/hsdfinder)
-![sdfsf-you_like-blue](https://img.shields.io/badge/Conda_downloaded-1455-blue)
+![any_text-you_like-blue](https://img.shields.io/badge/Conda_downloaded-1455-blue)
+https://anaconda.org/bioconda/hsdfinder/badges/version.svg
+
 ![any_text-you_like-blue](https://img.shields.io/badge/Repositories-2000-blue)
+![any_text-you_like-blue](https://anaconda.org/bioconda/hsdfinder/badges/version.svg)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/zx0223winner/HSDecipher/total)
+
+
+
+https://img.shields.io/github/downloads/wyp1125/MCScanX/total.svg
+
+https://github.com/wyp1125/MCScanX
+https://github.com/zx0223winner/HSDSnake
 
 <font size=40>__HSDFinder Manual__</font>
 
